@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import model.Question;
 import model.XmlReader;
 import org.w3c.dom.Document;
@@ -53,6 +55,8 @@ public class GameController {
     private int seconds = startingTime;
     private int questionCount;
     private Instant beginGame;
+    XmlReader reader = new XmlReader();
+    ArrayList<Question>questionarray =reader.XmlRead();
 
     @FXML
     private Label questionLabel;
@@ -80,11 +84,31 @@ public class GameController {
     public int numberofscore= 0;
     public int questionnumber = 1;
 
+    public Question newQuestion(){
+        return Question.getoneQuestion(questionarray);
+    }
 
+    public void answerclick(MouseEvent mouseEvent) {
+        try {
+            Thread.sleep(2000);
+        }catch(InterruptedException e){
+            e.getMessage();
+        }
+        Question question = newQuestion();
+        questionLabel.setText(question.getQuestion());
+        answer1.setText(question.getAnswer1());
+        answer2.setText(question.getAnswer2());
+        answer3.setText(question.getAnswer3());
+        answer4.setText(question.getAnswer4());
+        score.setText(Integer.toString(numberofscore));
+        questionnum.setText(Integer.toString(questionnumber));
+        questionnumber++;
+
+
+    }
 
     public void initData(){
-        XmlReader reader = new XmlReader();
-        ArrayList<Question>questionarray =reader.XmlRead();
+
         Question question = Question.getoneQuestion(questionarray);
         questionLabel.setText(question.getQuestion());
         answer1.setText(question.getAnswer1());
@@ -94,6 +118,7 @@ public class GameController {
         score.setText(Integer.toString(numberofscore));
         questionnum.setText(Integer.toString(questionnumber));
 
+
     }
 
 
@@ -101,13 +126,6 @@ public class GameController {
     public void initialize() {
 
         initData();
-
-        //update();
-
-
-
-
-
 
     }
 

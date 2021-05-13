@@ -98,76 +98,7 @@ public class Question {
 
 
     }
-    /*public Question XmlRead(){
-        ArrayList<Question>questionlist = new ArrayList<Question>();
-        Random random = new Random();
-        int rand = random.nextInt(3);
-        System.out.println("A random generált szám: "+rand);
-        try {
 
-            // optional, but recommended
-            // process XML securely, avoid attacks like XML External Entities (XXE)
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
-
-            // parse XML file
-            DocumentBuilder db = dbf.newDocumentBuilder();
-
-            Document doc = db.parse(new File(FILENAME));
-            doc.getDocumentElement().normalize();
-
-            System.out.println("Root Element :" + doc.getDocumentElement().getNodeName());
-            System.out.println("------");
-
-
-            NodeList list = doc.getElementsByTagName("questions");
-
-            for (int temp = 0; temp < list.getLength(); temp++) {
-
-                Node node = list.item(temp);
-
-                if (node.getNodeType() == Node.ELEMENT_NODE) {
-
-                    Element element = (Element) node;
-
-                    // get staff's attribute
-                    String id = element.getAttribute("id");
-
-                    // get text
-                    String question = element.getElementsByTagName("question").item(0).getTextContent().trim();
-                    String answer1 = element.getElementsByTagName("answer1").item(0).getTextContent().trim();;
-                    String answer2 = element.getElementsByTagName("answer2").item(0).getTextContent().trim();;
-                    String answer3 = element.getElementsByTagName("answer3").item(0).getTextContent().trim();;
-                    String answer4 = element.getElementsByTagName("answer4").item(0).getTextContent().trim();;
-                    String result = element.getElementsByTagName("result").item(0).getTextContent().trim();;
-
-
-                    System.out.println("Current Element :" + node.getNodeName());
-                    System.out.println("Question Id : " + id);
-                    System.out.println("Question : " + question);
-                    System.out.println("Answer 1: " + answer1);
-                    System.out.println("Answer 2: " + answer2);
-                    System.out.println("Answer 3: " + answer3);
-                    System.out.println("Answer 4: " + answer4);
-                    System.out.println("Result: " + result);
-                    questionlist.add(new Question(question, answer1,answer2,answer3,answer4,result));
-
-                }
-            }
-
-
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("A választott kérdés" + questionlist.get(rand).question);
-        System.out.println("ans1  " + questionlist.get(rand).answer1);
-        System.out.println("ans2  " + questionlist.get(rand).answer2);
-        System.out.println("ans3  " + questionlist.get(rand).answer3);
-        System.out.println("ans4  " + questionlist.get(rand).answer4);
-        System.out.println("res  " + questionlist.get(rand).result);
-
-        return questionlist.get(rand);
-    }*/
 }
     
     
