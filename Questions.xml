@@ -1,0 +1,205 @@
+
+<quiz>
+    <questions id="1">
+        <question>
+            Mi magyarország fővárosa?
+        </question>
+        <answer1>
+            Budapest
+        </answer1>
+        <answer2>
+            Debrecen
+        </answer2>
+        <answer3>
+            Mátészalka
+        </answer3>
+        <answer4>
+            Balmazújváros
+        </answer4>
+        <result>
+            1
+        </result>
+    </questions>
+    <questions  id="2">
+        <question>
+            Hány lába van egy lónak
+        </question>
+        <answer1>
+            3
+        </answer1>
+        <answer2>
+            2
+        </answer2>
+        <answer3>
+            4
+        </answer3>
+        <answer4>
+            1
+        </answer4>
+        <result>
+            3
+        </result>
+    </questions>
+    <questions  id="3">
+        <question>
+            Hány éves BarnaB
+        </question>
+        <answer1>
+            1
+        </answer1>
+        <answer2>
+            19
+        </answer2>
+        <answer3>
+            20
+        </answer3>
+        <answer4>
+            21
+        </answer4>
+        <result>
+            3
+        </result>
+    </questions>
+    <questions  id="4">
+        <question>
+
+        </question>
+        <answer1>
+
+        </answer1>
+        <answer2>
+
+        </answer2>
+        <answer3>
+
+        </answer3>
+        <answer4>
+
+        </answer4>
+        <result>
+
+        </result>
+    </questions>
+    <questions id="5">
+        <question>
+
+        </question>
+        <answer1>
+
+        </answer1>
+        <answer2>
+
+        </answer2>
+        <answer3>
+
+        </answer3>
+        <answer4>
+
+        </answer4>
+        <result>
+
+        </result>
+    </questions>
+    <questions id="6">
+        <question>
+
+        </question>
+        <answer1>
+
+        </answer1>
+        <answer2>
+
+        </answer2>
+        <answer3>
+
+        </answer3>
+        <answer4>
+
+        </answer4>
+        <result>
+
+        </result>
+    </questions>
+    <questions id="7">
+        <question>
+
+        </question>
+        <answer1>
+
+        </answer1>
+        <answer2>
+
+        </answer2>
+        <answer3>
+
+        </answer3>
+        <answer4>
+
+        </answer4>
+        <result>
+
+        </result>
+    </questions>
+    <questions id="8">
+        <question>
+
+        </question>
+        <answer1>
+
+        </answer1>
+        <answer2>
+
+        </answer2>
+        <answer3>
+
+        </answer3>
+        <answer4>
+
+        </answer4>
+        <result>
+
+        </result>
+    </questions>
+    <questions id="9">
+        <question>
+
+        </question>
+        <answer1>
+
+        </answer1>
+        <answer2>
+
+        </answer2>
+        <answer3>
+
+        </answer3>
+        <answer4>
+
+        </answer4>
+        <result>
+
+        </result>
+    </questions>
+    <questions id="10">
+        <question>
+
+        </question>
+        <answer1>
+
+        </answer1>
+        <answer2>
+
+        </answer2>
+        <answer3>
+
+        </answer3>
+        <answer4>
+
+        </answer4>
+        <result>
+
+        </result>
+    </questions>
+
+
+</quiz>

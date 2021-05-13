@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LaunchController">
+   <children>
+      <Label layoutX="210.0" layoutY="14.0" text="Quiz" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="96.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="115.0" layoutY="209.0" text="Player name:" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font></Label>
+      <TextField fx:id="playerTextfield" layoutX="223.0" layoutY="203.0" prefHeight="29.0" prefWidth="167.0">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font></TextField>
+      <Button fx:id="startButton" layoutX="254.0" layoutY="271.0" mnemonicParsing="false" onAction="#startAction" prefHeight="51.0" prefWidth="105.0" text="Game" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font></Button>
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="231.0" layoutY="244.0" prefHeight="16.0" prefWidth="151.0" textFill="#e30e0e" />
+
+   </children>
+   <effect>
+      <Glow />
+   </effect>
+</Pane>

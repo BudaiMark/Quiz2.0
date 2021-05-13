@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameController">
+    <children>
+        <Label fx:id="questionTitle" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="14.0" prefHeight="16.0" prefWidth="565.0" text="Question" textAlignment="CENTER" textFill="#1913c6" textOverrun="CENTER_WORD_ELLIPSIS">
+            <font>
+                <Font name="Dyuthi" size="59.0" />
+            </font>
+         <effect>
+            <Glow />
+         </effect>
+        </Label>
+        <Label fx:id="questionLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="111.0" prefHeight="16.0" prefWidth="565.0" text="" textFill="#1913c6">
+            <font>
+                <Font name="Dyuthi" size="30.0" />
+            </font>
+        </Label>
+        <Button fx:id="answer1" layoutX="112.0" layoutY="199.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="163.0" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font>
+        </Button>
+        <Button fx:id="answer3" layoutX="112.0" layoutY="295.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="163.0" text="" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font>
+        </Button>
+      <Button fx:id="answer2" layoutX="395.0" layoutY="199.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="163.0" text="" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="answer4" layoutX="395.0" layoutY="295.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="163.0" text="" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="28.0" layoutY="210.0" text="Answer 1:" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="306.0" text="Answer 3:" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="301.0" layoutY="210.0" text="Answer 2:" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="306.0" text="Answer 4:" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="481.0" layoutY="14.0" text="Number:" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="questionnum" layoutX="548.0" layoutY="15.0" prefHeight="16.0" prefWidth="47.0" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="12.0" layoutY="15.0" prefHeight="16.0" prefWidth="75.0" text="Score:" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="18.0" />
+         </font>
+      </Label>
+        <Label fx:id="score" layoutX="64.0" layoutY="15.0" prefHeight="16.0" prefWidth="47.0" textFill="#1913c6">
+            <font>
+                <Font name="Dyuthi" size="18.0" />
+            </font>
+        </Label>
+
+    </children>
+</Pane>
