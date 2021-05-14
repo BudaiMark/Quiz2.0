@@ -1,4 +1,5 @@
 package controller;
+import com.sun.javafx.scene.control.Properties;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -57,6 +58,7 @@ public class GameController {
     private Instant beginGame;
     XmlReader reader = new XmlReader();
     ArrayList<Question>questionarray =reader.XmlRead();
+    Question globalQuestion;
 
     @FXML
     private Label questionLabel;
@@ -88,28 +90,89 @@ public class GameController {
         return Question.getoneQuestion(questionarray);
     }
 
-    public void answerclick(MouseEvent mouseEvent) {
-        try {
-            Thread.sleep(2000);
-        }catch(InterruptedException e){
-            e.getMessage();
-        }
-        Question question = newQuestion();
-        questionLabel.setText(question.getQuestion());
-        answer1.setText(question.getAnswer1());
-        answer2.setText(question.getAnswer2());
-        answer3.setText(question.getAnswer3());
-        answer4.setText(question.getAnswer4());
-        score.setText(Integer.toString(numberofscore));
-        questionnum.setText(Integer.toString(questionnumber));
+    public void answerclick1(MouseEvent mouseEvent) {
         questionnumber++;
 
+            if(globalQuestion.getResult().equals(answer1.getId())){
+
+                numberofscore++;
+                score.setText(Integer.toString(numberofscore));
+                setScreen();
+
+            }else{
+                setScreen();
+            }
+
+    }
+    public void answerclick2(MouseEvent mouseEvent) {
+        questionnumber++;
+        if (questionnumber < 6) {
+            if(globalQuestion.getResult().equals(answer2.getId())){
+
+                numberofscore++;
+                score.setText(Integer.toString(numberofscore));
+                setScreen();
+
+            }else{
+                setScreen();
+            }
+        }
+    }
+    public void answerclick3(MouseEvent mouseEvent) {
+        questionnumber++;
+
+            if(globalQuestion.getResult().equals(answer3.getId())){
+
+                numberofscore++;
+                score.setText(Integer.toString(numberofscore));
+                setScreen();
+
+            }else{
+                setScreen();
+
+            }
+    }
+    public void answerclick4(MouseEvent mouseEvent) {
+        questionnumber++;
+
+            if(globalQuestion.getResult().equals(answer4.getId())){
+
+                numberofscore++;
+                score.setText(Integer.toString(numberofscore));
+                setScreen();
+
+            }
+            else{
+                setScreen();
+            }
+
+    }
+
+    public void setScreen(){
+            if (questionnumber < 6) {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.getMessage();
+                }
+
+                Question question = newQuestion();
+                globalQuestion = question;
+                questionLabel.setText(question.getQuestion());
+                answer1.setText(question.getAnswer1());
+                answer2.setText(question.getAnswer2());
+                answer3.setText(question.getAnswer3());
+                answer4.setText(question.getAnswer4());
+                questionnum.setText(Integer.toString(questionnumber));
+
+            }
 
     }
 
     public void initData(){
 
         Question question = Question.getoneQuestion(questionarray);
+        globalQuestion = question;
         questionLabel.setText(question.getQuestion());
         answer1.setText(question.getAnswer1());
         answer2.setText(question.getAnswer2());

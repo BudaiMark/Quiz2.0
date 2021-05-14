@@ -2,7 +2,7 @@
 <quiz>
     <questions id="1">
         <question>
-            Mi magyarország fővárosa?
+            Mi magyarország fövárosa?
         </question>
         <answer1>
             Budapest
@@ -17,7 +17,7 @@
             Balmazújváros
         </answer4>
         <result>
-            1
+            answer1
         </result>
     </questions>
     <questions  id="2">
@@ -37,7 +37,7 @@
             1
         </answer4>
         <result>
-            3
+            answer3
         </result>
     </questions>
     <questions  id="3">
@@ -57,7 +57,7 @@
             21
         </answer4>
         <result>
-            3
+            answer3
         </result>
     </questions>
     <questions  id="4">

@@ -20,22 +20,22 @@
                 <Font name="Dyuthi" size="30.0" />
             </font>
         </Label>
-        <Button fx:id="answer1" layoutX="112.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#answerclick" prefHeight="52.0" prefWidth="163.0" textFill="#1913c6">
+        <Button fx:id="answer1" layoutX="112.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#answerclick1" prefHeight="52.0" prefWidth="163.0" textFill="#1913c6">
          <font>
             <Font name="Dyuthi" size="18.0" />
          </font>
         </Button>
-        <Button fx:id="answer3" layoutX="112.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#answerclick" prefHeight="52.0" prefWidth="163.0" text="" textFill="#1913c6">
+        <Button fx:id="answer3" layoutX="112.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#answerclick3" prefHeight="52.0" prefWidth="163.0" text="" textFill="#1913c6">
          <font>
             <Font name="Dyuthi" size="18.0" />
          </font>
         </Button>
-      <Button fx:id="answer2" layoutX="395.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#answerclick" prefHeight="52.0" prefWidth="163.0" text="" textFill="#1913c6">
+      <Button fx:id="answer2" layoutX="395.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#answerclick2" prefHeight="52.0" prefWidth="163.0" text="" textFill="#1913c6">
          <font>
             <Font name="Dyuthi" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="answer4" layoutX="395.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#answerclick" prefHeight="52.0" prefWidth="163.0" text="" textFill="#1913c6">
+      <Button fx:id="answer4" layoutX="395.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#answerclick4" prefHeight="52.0" prefWidth="163.0" text="" textFill="#1913c6">
          <font>
             <Font name="Dyuthi" size="18.0" />
          </font>
