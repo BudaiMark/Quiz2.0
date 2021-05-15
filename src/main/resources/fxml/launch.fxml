@@ -18,15 +18,18 @@
       <Label layoutX="115.0" layoutY="209.0" text="Player name:" textFill="#1913c6">
          <font>
             <Font name="Dyuthi" size="18.0" />
-         </font></Label>
-      <TextField fx:id="playerTextfield" layoutX="223.0" layoutY="203.0" prefHeight="29.0" prefWidth="167.0">
+         </font>
+      </Label>
+      <TextField fx:id="playerTextfield" layoutX="223.0" layoutY="203.0" prefHeight="29.0" prefWidth="167.0" style="-fx-text-fill: #1913c6">
          <font>
             <Font name="Dyuthi" size="18.0" />
-         </font></TextField>
+         </font>
+      </TextField>
       <Button fx:id="startButton" layoutX="254.0" layoutY="271.0" mnemonicParsing="false" onAction="#startAction" prefHeight="51.0" prefWidth="105.0" text="Game" textFill="#1913c6">
          <font>
             <Font name="Dyuthi" size="18.0" />
-         </font></Button>
+         </font>
+      </Button>
       <Label fx:id="errorLabel" alignment="CENTER" layoutX="231.0" layoutY="244.0" prefHeight="16.0" prefWidth="151.0" textFill="#e30e0e" />
 
    </children>
