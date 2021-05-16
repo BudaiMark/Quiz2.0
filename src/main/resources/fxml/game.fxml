@@ -80,6 +80,11 @@
                 <Font name="Dyuthi" size="18.0" />
             </font>
         </Label>
+      <Button fx:id="showscore" layoutX="283.0" layoutY="359.0" mnemonicParsing="false" onAction="#loadEnd" text="Score" textFill="#1913c6">
+         <font>
+            <Font name="Dyuthi" size="14.0" />
+         </font>
+      </Button>
 
     </children>
 </Pane>

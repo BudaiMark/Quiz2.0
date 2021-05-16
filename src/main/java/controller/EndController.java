@@ -1,5 +1,6 @@
 package controller;
 import com.sun.javafx.scene.control.Properties;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -52,7 +53,11 @@ import javafx.event.EventHandler;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.Instant;
+@Slf4j
 public class EndController {
+    private static final String STANDARD_BUTTON = "-fx-background-color: transparent; -fx-border-color: black;";
+    private String scorevalue;
+
     @FXML
     private Label score;
 
@@ -63,6 +68,28 @@ public class EndController {
     private Button dataBaseButton;
 
 
+
+    public String getScorevalue() {
+        return scorevalue;
+    }
+    public void setScorevalue(String scorevalue) {
+        this.scorevalue = scorevalue;
+        score.setText(scorevalue);
+    }
+
+    @FXML
+    public void quitGame(ActionEvent actionEvent) throws IOException{
+
+        Platform.exit();
+
+    }
+
+    @FXML
+    public void initialize(){
+        quitButton.setStyle(STANDARD_BUTTON);
+        dataBaseButton.setStyle(STANDARD_BUTTON);
+
+    }
 
 
 

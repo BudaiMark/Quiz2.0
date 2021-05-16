@@ -66,7 +66,6 @@ public class GameController{
     private static final String HOVERED_BUTTON = "-fx-background-color: lightgrey; -fx-border-color: black";
     private static final String GREEN_BUTTON = "-fx-background-color: lightgreen; -fx-border-color: black";
     private static final String RED_BUTTON = "-fx-background-color: red; -fx-border-color: black";
-    private Stage myStage;
     XmlReader reader = new XmlReader();
     ArrayList<Question>questionarray =reader.XmlRead();
     Question globalQuestion;
@@ -93,6 +92,9 @@ public class GameController{
     @FXML
     private Button answer4;
 
+    @FXML
+    private Button showscore;
+
 
 
     public int numberofscore= 0;
@@ -103,9 +105,7 @@ public class GameController{
     public Question newQuestion(){
         return Question.getoneQuestion(questionarray);
     }
-    public void setStage(Stage stage){
-        myStage = stage;
-    }
+
 
 
     public void answerclick1(MouseEvent mouseEvent) {
@@ -125,7 +125,6 @@ public class GameController{
 
     }
     public void answerclick2(MouseEvent mouseEvent) {
-
             setDisableButton();
             if(globalQuestion.getResult().equals(answer2.getId())){
 
@@ -146,6 +145,7 @@ public class GameController{
     }
     public void answerclick3(MouseEvent mouseEvent) {
             setDisableButton();
+
             if(globalQuestion.getResult().equals(answer3.getId())){
 
                 answer3.setStyle(GREEN_BUTTON);
@@ -181,10 +181,10 @@ public class GameController{
 
     public void setScreen(){
 
-        questionnumber++;
             if (questionnumber < 6) {
                 Question question = newQuestion();
                 standardButtonColor();
+                //setButtonHover();
                 globalQuestion = question;
                 questionLabel.setText(question.getQuestion());
                 answer1.setText(question.getAnswer1());
@@ -192,6 +192,7 @@ public class GameController{
                 answer3.setText(question.getAnswer3());
                 answer4.setText(question.getAnswer4());
                 questionnum.setText(Integer.toString(questionnumber));
+
 
             }
 
@@ -217,12 +218,15 @@ public class GameController{
         answer2.setStyle(STANDARD_BUTTON);
         answer3.setStyle(STANDARD_BUTTON);
         answer4.setStyle(STANDARD_BUTTON);
+        showscore.setStyle(STANDARD_BUTTON);
+        showscore.setVisible(false);
+
     }
 
 
     public void timer(){
 
-
+        questionnumber++;
         Timeline time = new Timeline();
         time.setCycleCount(Timeline.INDEFINITE);
         if(time!=null)
@@ -234,10 +238,14 @@ public class GameController{
                 if (seconds<=0)
                     time.stop();
                 seconds--;
-                if(seconds==-1) {
+                if(seconds==-1&& questionnumber<6) {
+
                     setScreen();
                     setEnableButton();
+                }else if(!(questionnumber<6)){
+                    showscore.setVisible(true);
                 }
+
             }
         });
         time.getKeyFrames().add(frame);
@@ -261,10 +269,35 @@ public class GameController{
 
     }
 
+    /*public void setButtonHover(){
+        if(answer1.getStyle().equals(STANDARD_BUTTON) && touched == false){
+            answer1.setOnMouseEntered(e-> answer1.setStyle(HOVERED_BUTTON));
+            answer1.setOnMouseExited(e-> answer1.setStyle(STANDARD_BUTTON));
+        }
+        if(answer2.getStyle().equals(STANDARD_BUTTON) && !answer1.isDisabled()&& touched == false) {
+            answer2.setOnMouseEntered(e -> answer2.setStyle(HOVERED_BUTTON));
+            answer2.setOnMouseExited(e -> answer2.setStyle(STANDARD_BUTTON));
+        }
+        if(answer3.getStyle().equals(STANDARD_BUTTON) && !answer1.isDisabled()&& touched == false){
+            answer3.setOnMouseEntered(e-> answer3.setStyle(HOVERED_BUTTON));
+            answer3.setOnMouseExited(e-> answer3.setStyle(STANDARD_BUTTON));
+        }
+        if(answer4.getStyle().equals(STANDARD_BUTTON) && !answer1.isDisabled()&& touched == false){
+        answer4.setOnMouseEntered(e-> answer4.setStyle(HOVERED_BUTTON));
+        answer4.setOnMouseExited(e-> answer4.setStyle(STANDARD_BUTTON));
+        }
+
+
+
+
+    }*/
+
     public void initData(){
 
         Question question = Question.getoneQuestion(questionarray);
         standardButtonColor();
+        showscore.setVisible(false);
+        //setButtonHover();
         globalQuestion = question;
         questionLabel.setText(question.getQuestion());
         answer1.setText(question.getAnswer1());
@@ -274,6 +307,21 @@ public class GameController{
         score.setText(Integer.toString(numberofscore));
         questionnum.setText(Integer.toString(questionnumber));
 
+
+
+    }
+
+    @FXML
+    public void loadEnd(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/end.fxml"));
+        Parent root = fxmlLoader.load();
+        EndController controller = fxmlLoader.getController();
+        controller.setScorevalue(score.getText());
+        System.out.println(score.getText());
+        System.out.println(controller.getScorevalue());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
 
 
     }

@@ -16,6 +16,7 @@ import java.io.IOException;
 
 @Slf4j
 public class LaunchController {
+    private static final String STANDARD_BUTTON = "-fx-background-color: transparent; -fx-border-color: black;";
 
     @FXML
     private TextField playerTextfield;
@@ -24,6 +25,9 @@ public class LaunchController {
 
     @FXML
     private Label errorLabel;
+
+    @FXML
+    private Button startButton;
 
 
 
@@ -42,6 +46,12 @@ public class LaunchController {
             stage.show();
 
         }
+    }
+    @FXML
+    public void initialize(){
+        startButton.setStyle(STANDARD_BUTTON);
+
+
     }
 
 }

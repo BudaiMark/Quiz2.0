@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class XmlReader {
 
     private ArrayList<Question>questionlist = new ArrayList<Question>();
-    private static final String FILENAME = "/home/budai/Projects/Quiz/Questions.xml";
+    private static final String FILENAME = "Questions.xml";
 
     public XmlReader() {
         this.questionlist = questionlist;
