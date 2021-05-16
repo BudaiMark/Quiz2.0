@@ -12,17 +12,13 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 
 /**
  * Az Xml beolvasást végző osztály.
  */
 public class XmlReader {
-
-    /**
-     * Beolvasandó fájl
-     */
-    private static final String FILENAME = "Questions.xml";
 
     /**
      * Itt történik a tényleges beolvasás egy ArrayList-el térünk vissza, ami a kérdéseket tartalmazza.
@@ -39,8 +35,8 @@ public class XmlReader {
             dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
 
             DocumentBuilder db = dbf.newDocumentBuilder();
+            Document doc = db.parse(getClass().getResourceAsStream("/xml/questions.xml"));
 
-            Document doc = db.parse(new File(FILENAME));
             doc.getDocumentElement().normalize();
 
 

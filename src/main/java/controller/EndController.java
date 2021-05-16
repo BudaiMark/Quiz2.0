@@ -65,7 +65,7 @@ public class EndController {
     /**
      * Osztályváltozók, végleges változók létrehozása.
      */
-    private static final String STANDARD_BUTTON = "-fx-background-color: transparent; -fx-border-color: black;";
+    private static final String STANDARD = "-fx-background-color: transparent; -fx-border-color: black;";
     private String scorevalue;
 
     /**
@@ -108,8 +108,9 @@ public class EndController {
      */
     @FXML
     public void initialize(){
-        quitButton.setStyle(STANDARD_BUTTON);
-        dataBaseButton.setStyle(STANDARD_BUTTON);
+        quitButton.setStyle(STANDARD);
+        dataBaseButton.setStyle(STANDARD);
+
 
     }
 

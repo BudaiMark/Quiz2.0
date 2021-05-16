@@ -71,7 +71,7 @@ public class GameController{
     private static final String GREEN_BUTTON = "-fx-background-color: lightgreen; -fx-border-color: black";
     private static final String RED_BUTTON = "-fx-background-color: red; -fx-border-color: black";
     /**
-     * Az xml fájlból beolvasott tartalom kérdéssé egyesített elemeinek listája.
+     * Az xml fájlból beolvasott tartalom kérdéssé egyesített elemeinek listája
      */
     XmlReader reader = new XmlReader();
     ArrayList<Question>questionarray =reader.XmlRead();

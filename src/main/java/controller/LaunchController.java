@@ -25,7 +25,7 @@ public class LaunchController {
     /**
      * Alapvető érték definiálása a gombok számára
      */
-    private static final String STANDARD_BUTTON = "-fx-background-color: transparent; -fx-border-color: black;";
+    private static final String STANDARD= "-fx-background-color: transparent; -fx-border-color: black;";
 
     /**
      * A képernyőn látható vizuális eszközök példányosítása, az fxml-ből érjük el id alapján
@@ -73,7 +73,8 @@ public class LaunchController {
     public void initialize(){
 
 
-        startButton.setStyle(STANDARD_BUTTON);
+        startButton.setStyle(STANDARD);
+        playerTextfield.setStyle(STANDARD);
 
 
     }
