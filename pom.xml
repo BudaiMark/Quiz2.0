@@ -6,6 +6,25 @@
     <artifactId>quiz</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>
+    <scm>
+        <developerConnection>scm:svn:https://github.com/BudaiMark/Quiz2.0</developerConnection>
+    </scm>
+    <description>Quiz for players</description>
+    <distributionManagement>
+        <site>
+            <id>shrek</id>
+            <url>scp://budaimark@shrek.unideb.hu:2222/home/budaimark/public_html/${project.artifactId}</url>
+        </site>
+    </distributionManagement>
+    <developers>
+        <developer>
+            <id>budaimark</id>
+            <name>Budai Márk</name>
+            <email>budaimark@inf.unideb.hu</email>
+            <organization>Faculty of Informatics, University of Debrecen</organization>
+            <organizationUrl>http://www.inf.unideb.hu/</organizationUrl>
+        </developer>
+    </developers>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>

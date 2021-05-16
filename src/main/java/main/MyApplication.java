@@ -6,6 +6,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ *
+ * Az első képernyő megjelenítése, launch.fxml -t betöltjük, adunk neki címet beállítjuk, hogy ne lehessen
+ * átméretezni, illetve megjelenítjük.
+ *
+ */
 public class MyApplication extends Application {
 
     @Override

@@ -53,11 +53,24 @@ import javafx.event.EventHandler;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.Instant;
+
+/**
+ * Ebben az osztályban az eredmény megjelenítés, a kilépő fukció, illetve a korábbi eredmények megtekintése opciója van lekezelve.
+ *
+ */
 @Slf4j
 public class EndController {
+
+
+    /**
+     * Osztályváltozók, végleges változók létrehozása.
+     */
     private static final String STANDARD_BUTTON = "-fx-background-color: transparent; -fx-border-color: black;";
     private String scorevalue;
 
+    /**
+     * Az fxml-ben szereplő vizuálisan látható osztályok példányosítása.
+     */
     @FXML
     private Label score;
 
@@ -67,16 +80,22 @@ public class EndController {
     @FXML
     private Button dataBaseButton;
 
+    /**
+     * Setter metódus a score értékének beállításához, erre van szükség, hogy az előző kontrollerben szereplő adatot
+     * megjelenítsünk ezen a képernyőn is.
+     *
+     */
 
-
-    public String getScorevalue() {
-        return scorevalue;
-    }
     public void setScorevalue(String scorevalue) {
         this.scorevalue = scorevalue;
         score.setText(scorevalue);
     }
 
+    /**
+     * A kilépő  funkciónak a megvalósítása.
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     public void quitGame(ActionEvent actionEvent) throws IOException{
 
@@ -84,6 +103,9 @@ public class EndController {
 
     }
 
+    /**
+     * Ez a metódus fut le először, a konstruktorhoz nagyon hasonló, azonban innen elérjük az fxml fájl tagjait.
+     */
     @FXML
     public void initialize(){
         quitButton.setStyle(STANDARD_BUTTON);

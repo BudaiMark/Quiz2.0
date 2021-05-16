@@ -1,4 +1,5 @@
 package model;
+import lombok.AllArgsConstructor;
 import net.bytebuddy.implementation.bind.MethodDelegationBinder;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -17,9 +18,16 @@ import java.util.Random;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Kérdés felépítését megvalósító osztály.
+ */
+
 @Slf4j
 public class Question {
 
+    /**
+     * Kérdést felépítő adattagokat tároló változók.
+     */
     private String question;
     private String answer1;
     private String answer2;
@@ -27,8 +35,15 @@ public class Question {
     private String answer4;
     private String result;
 
-    private static final String FILENAME = "/home/budai/Projects/Quiz/Questions.xml";
-
+    /**
+     * Az osztály konstruktora példány létrehozásakor a felsorolt paramétereket várja.
+     * @param question
+     * @param answer1
+     * @param answer2
+     * @param answer3
+     * @param answer4
+     * @param result
+     */
     public Question(String question, String answer1,String answer2,String answer3,String answer4,String result){
         this.question  = question;
         this.answer1  = answer1;
@@ -38,10 +53,16 @@ public class Question {
         this.result  = result;
 
     }
-
+    /**
+        Üres konstruktor.
+     */
     public Question() {
 
     }
+
+    /**
+     *Getter setter metódusok az osztályváltozókhoz.
+     */
 
     public String getQuestion() {
         return question;
@@ -90,7 +111,9 @@ public class Question {
     public void setResult(String result) {
         this.result = result;
     }
-
+    /**
+     * Kérdéslistából kisorsol egy random elemet.
+     */
     public static Question getoneQuestion(ArrayList<Question>questionarray){
         Random random = new Random();
         int rand = random.nextInt(3);

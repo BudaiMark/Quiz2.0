@@ -56,20 +56,31 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.time.Instant;
 
+/**
+ * Ebben az osztályban található a játék logikájának megjelenítése.
+ */
+
 public class GameController{
 
+    /**
+     * Osztályváltozók, végleges változók létrehozása.
+     */
     private final int startingTime = 2;
     private int seconds = startingTime;
-    private int questionCount;
-    private Instant beginGame;
     private static final String STANDARD_BUTTON = "-fx-background-color: transparent; -fx-border-color: black;";
-    private static final String HOVERED_BUTTON = "-fx-background-color: lightgrey; -fx-border-color: black";
     private static final String GREEN_BUTTON = "-fx-background-color: lightgreen; -fx-border-color: black";
     private static final String RED_BUTTON = "-fx-background-color: red; -fx-border-color: black";
+    /**
+     * Az xml fájlból beolvasott tartalom kérdéssé egyesített elemeinek listája.
+     */
     XmlReader reader = new XmlReader();
     ArrayList<Question>questionarray =reader.XmlRead();
     Question globalQuestion;
 
+
+    /**
+     * Az fxml-ben szereplő vizuálisan látható osztályok példányosítása.
+     */
     @FXML
     private Label questionLabel;
 
@@ -95,19 +106,30 @@ public class GameController{
     @FXML
     private Button showscore;
 
-
+    /**
+     *A kérdés, illetve a pont növelését elősegítő változók.
+     */
 
     public int numberofscore= 0;
     public int questionnumber = 1;
 
-
-
+    /**
+     * Egy kérdést visszaadó függvény.
+     * @return
+     */
     public Question newQuestion(){
         return Question.getoneQuestion(questionarray);
     }
 
 
-
+    /**
+     * A következő függvények a válaszgomb megnyomását követően lefutó függvények(eventek)
+     * amikben látható a gomb lekezelése(meg lehessen-e nyomni), továbbá a bizonyos esetek lekezelése
+     * pl. Ha jó gombot nyomott le a felhasználó akkor zöld színnel jelezze a játékos részére
+     * Ha rossz gombot nyomott meg, akkor az pirossal jelenjen meg a helyes válasz zölddel.
+     * Ezt követően meghívjuk a timer függvényt.
+     * @param mouseEvent
+     */
     public void answerclick1(MouseEvent mouseEvent) {
             setDisableButton();
             if(globalQuestion.getResult().equals(answer1.getId())){
@@ -179,12 +201,14 @@ public class GameController{
 
     }
 
+    /**
+     * Beállítjuk minden új kérdésnél, hogy nézzen ki a képernyő.
+     */
     public void setScreen(){
 
             if (questionnumber < 6) {
                 Question question = newQuestion();
                 standardButtonColor();
-                //setButtonHover();
                 globalQuestion = question;
                 questionLabel.setText(question.getQuestion());
                 answer1.setText(question.getAnswer1());
@@ -198,6 +222,9 @@ public class GameController{
 
     }
 
+    /**
+     * Lekérdezzük a helyes választ abban az esetben, ha a játékos nem találta volna el a kérdést.
+     */
     public void getGreen(){
         if(globalQuestion.getResult().equals("answer1")){
             answer1.setStyle(GREEN_BUTTON);}
@@ -212,6 +239,9 @@ public class GameController{
 
     }
 
+    /**
+     *Beállítjuk a gombok alap vizuális kinézetét.
+     */
 
     public void standardButtonColor(){
         answer1.setStyle(STANDARD_BUTTON);
@@ -223,6 +253,12 @@ public class GameController{
 
     }
 
+    /**
+     * A timer függvény segít abban hogy a kérdéések között a játkosnak legyen ideje válaszolni, ne egyben fusson le az egész programrész,
+     * különben nem látnánk semmit az ereményből. Ehhez használunk egy KeyFrame-et, továbbá az utolsó válasz megadása után látható teszi
+     * a gombot, aminek megnyomásával megjelenik az eredmény, a kilépő gomb, illetve egy gomb ami a játékosokat tartalmazza.
+     *
+     */
 
     public void timer(){
 
@@ -234,7 +270,6 @@ public class GameController{
         KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                //timeDisplay.setText(String.valueOf(seconds));
                 if (seconds<=0)
                     time.stop();
                 seconds--;
@@ -254,6 +289,10 @@ public class GameController{
         seconds = startingTime;
     }
 
+    /**
+     * A gombokat elérhetetlenné teszi a felhasználók számára(nem lehet megnyomni).
+     * A válaszgomb megnyomását követően történik meg, hogy ne tudjon több scoret kapni a játékos, ugyanazon gomb megnyomásával.
+     */
     public void setDisableButton(){
         answer1.setDisable(true);
         answer2.setDisable(true);
@@ -261,6 +300,10 @@ public class GameController{
         answer4.setDisable(true);
 
     }
+    /**
+     * A gombokat elérhetővé teszi a felhasználók számára(meg lehet nyomni).
+     * Minden új kérdés legenerálását követően elérhető a funkció.
+     */
     public void setEnableButton(){
         answer1.setDisable(false);
         answer2.setDisable(false);
@@ -269,35 +312,34 @@ public class GameController{
 
     }
 
-    /*public void setButtonHover(){
-        if(answer1.getStyle().equals(STANDARD_BUTTON) && touched == false){
-            answer1.setOnMouseEntered(e-> answer1.setStyle(HOVERED_BUTTON));
-            answer1.setOnMouseExited(e-> answer1.setStyle(STANDARD_BUTTON));
-        }
-        if(answer2.getStyle().equals(STANDARD_BUTTON) && !answer1.isDisabled()&& touched == false) {
-            answer2.setOnMouseEntered(e -> answer2.setStyle(HOVERED_BUTTON));
-            answer2.setOnMouseExited(e -> answer2.setStyle(STANDARD_BUTTON));
-        }
-        if(answer3.getStyle().equals(STANDARD_BUTTON) && !answer1.isDisabled()&& touched == false){
-            answer3.setOnMouseEntered(e-> answer3.setStyle(HOVERED_BUTTON));
-            answer3.setOnMouseExited(e-> answer3.setStyle(STANDARD_BUTTON));
-        }
-        if(answer4.getStyle().equals(STANDARD_BUTTON) && !answer1.isDisabled()&& touched == false){
-        answer4.setOnMouseEntered(e-> answer4.setStyle(HOVERED_BUTTON));
-        answer4.setOnMouseExited(e-> answer4.setStyle(STANDARD_BUTTON));
-        }
+    /**
+     * A gomb megnyomását követően betölti a következő fxml-t illetve átadja paraméterül a pontoknak a számát.
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
+    @FXML
+    public void loadEnd(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/end.fxml"));
+        Parent root = fxmlLoader.load();
+        EndController controller = fxmlLoader.getController();
+        controller.setScorevalue(score.getText());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
 
 
+    }
 
-
-    }*/
+    /**
+     *Betölti a kezdőértékeket, kérdést, illetve a gombokon szereplő válaszokat.
+     */
 
     public void initData(){
 
         Question question = Question.getoneQuestion(questionarray);
         standardButtonColor();
         showscore.setVisible(false);
-        //setButtonHover();
         globalQuestion = question;
         questionLabel.setText(question.getQuestion());
         answer1.setText(question.getAnswer1());
@@ -311,22 +353,9 @@ public class GameController{
 
     }
 
-    @FXML
-    public void loadEnd(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/end.fxml"));
-        Parent root = fxmlLoader.load();
-        EndController controller = fxmlLoader.getController();
-        controller.setScorevalue(score.getText());
-        System.out.println(score.getText());
-        System.out.println(controller.getScorevalue());
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
-
-
-    }
-
-
+    /**
+     * Ez a metódus fut le először, a konstruktorhoz nagyon hasonló, azonban innen elérjük az fxml fájl tagjait.
+     */
     @FXML
     public void initialize() {
 

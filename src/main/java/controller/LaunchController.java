@@ -13,14 +13,27 @@ import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
+/**
+ *
+ * A screen-en meggjelenő vizuális eszközökkel történő műveletek, események itt történnek kezelésre(eventek), továbbá
+ * itt tudunk módosítani a képernyő tartalmán
+ *
+ */
 
 @Slf4j
 public class LaunchController {
+    /**
+     * Alapvető érték definiálása a gombok számára
+     */
     private static final String STANDARD_BUTTON = "-fx-background-color: transparent; -fx-border-color: black;";
+
+    /**
+     * A képernyőn látható vizuális eszközök példányosítása, az fxml-ből érjük el id alapján
+     */
+
 
     @FXML
     private TextField playerTextfield;
-
 
 
     @FXML
@@ -30,7 +43,12 @@ public class LaunchController {
     private Button startButton;
 
 
-
+    /**
+     * Egy gomb megnyomásának hatására lefut a metódus amiben egy mezőt vizsgálunk, hogy üres-e,
+     * illetve betöltjük az új fxml-t.
+     * @param actionEvent
+     * @throws IOException
+     */
 
     public void startAction(ActionEvent actionEvent) throws IOException {
         if (playerTextfield.getText().isEmpty()) {
@@ -47,8 +65,14 @@ public class LaunchController {
 
         }
     }
+
+    /**
+     * Ez a metódus fut le először, a konstruktorhoz nagyon hasonló, azonban innen elérjük az fxml fájl tagjait.
+     */
     @FXML
     public void initialize(){
+
+
         startButton.setStyle(STANDARD_BUTTON);
 
 

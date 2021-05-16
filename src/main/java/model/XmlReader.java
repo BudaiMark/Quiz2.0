@@ -14,21 +14,21 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
+/**
+ * Az Xml beolvasást végző osztály.
+ */
 public class XmlReader {
 
-    private ArrayList<Question>questionlist = new ArrayList<Question>();
+    /**
+     * Beolvasandó fájl
+     */
     private static final String FILENAME = "Questions.xml";
 
-    public XmlReader() {
-        this.questionlist = questionlist;
-
-    }
-
-    public ArrayList<Question> getQuestionlist() {
-        return questionlist;
-    }
-
+    /**
+     * Itt történik a tényleges beolvasás egy ArrayList-el térünk vissza, ami a kérdéseket tartalmazza.
+     * Tag-ek illetve id-k alapján történik az adatok szétválasztása.
+     * @return
+     */
 
     public ArrayList<Question> XmlRead(){
         ArrayList<Question>questionlist = new ArrayList<Question>();
@@ -43,8 +43,6 @@ public class XmlReader {
             Document doc = db.parse(new File(FILENAME));
             doc.getDocumentElement().normalize();
 
-            System.out.println("Root Element :" + doc.getDocumentElement().getNodeName());
-            System.out.println("------");
 
 
             NodeList list = doc.getElementsByTagName("questions");
@@ -68,14 +66,6 @@ public class XmlReader {
                     String result = element.getElementsByTagName("result").item(0).getTextContent().trim();;
 
 
-                    System.out.println("Current Element :" + node.getNodeName());
-                    System.out.println("Question Id : " + id);
-                    System.out.println("Question : " + question);
-                    System.out.println("Answer 1: " + answer1);
-                    System.out.println("Answer 2: " + answer2);
-                    System.out.println("Answer 3: " + answer3);
-                    System.out.println("Answer 4: " + answer4);
-                    System.out.println("Result: " + result);
                     questionlist.add(new Question(question, answer1,answer2,answer3,answer4,result));
 
                 }
