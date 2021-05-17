@@ -18,7 +18,6 @@ import java.util.List;
 /**
  * {@code ScoreController} Itt törtnik az adatbázis megjelenítése a képernyőn.
  */
-@Slf4j
 public class ScoreController {
 
     /**

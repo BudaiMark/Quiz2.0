@@ -36,7 +36,7 @@ public class XmlReaderTest {
     }
 
     @Test
-    public void QuestionReturnsCorrectFields() {
+    public void questionReturnsCorrectFields() {
         Question question = questionarray.get(0);
         assertNotNull(question.getQuestion());
         assertNotNull(question.getAnswer1());
@@ -47,7 +47,7 @@ public class XmlReaderTest {
     }
 
     @Test
-    public void QuestionReturnsCorrectData() {
+    public void questionReturnsCorrectData() {
         Question question = questionarray.get(0);
         assertEquals("Mi magyarország fövárosa?", question.getQuestion());
         assertEquals("Budapest", question.getAnswer1());

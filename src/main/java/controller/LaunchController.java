@@ -10,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import lombok.extern.slf4j.Slf4j;
 import org.tinylog.Logger;
 
 import java.io.IOException;
@@ -21,7 +20,7 @@ import java.io.IOException;
  *
  */
 
-@Slf4j
+
 public class LaunchController {
     /**
      * {@code STANDARDRD}Alapvető érték definiálása a gombok számára

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 /**
  * {@code XmlReader}Az Xml beolvasást végző osztály.
  */
+
 public class XmlReader {
 
     /**

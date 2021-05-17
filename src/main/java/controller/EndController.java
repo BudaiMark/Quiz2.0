@@ -15,14 +15,10 @@ import java.io.IOException;
 
 
 
-import lombok.extern.slf4j.Slf4j;
-
-
 /**
  * {@code EndController}Ebben az osztályban az eredmény megjelenítés, a kilépő fukció, illetve a korábbi eredmények megtekintése opciója van lekezelve.
  *
  */
-@Slf4j
 public class EndController {
 
 

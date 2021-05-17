@@ -3,13 +3,13 @@ package model;
 import org.tinylog.Logger;
 import java.util.ArrayList;
 import java.util.Random;
-import lombok.extern.slf4j.Slf4j;
+
 
 /**
  * Kérdés felépítését megvalósító osztály.
  */
 
-@Slf4j
+
 public class Question {
 
     /**
@@ -85,9 +85,15 @@ public class Question {
      */
     public static Question getoneQuestion(ArrayList<Question>questionarray){
         Logger.info("Kérdés legenerálása.");
+
+        return questionarray.get(generateRandomNumber());
+
+
+    }
+    public static int generateRandomNumber(){
         Random random = new Random();
         int rand = random.nextInt(3);
-        return questionarray.get(rand);
+        return rand;
 
 
     }

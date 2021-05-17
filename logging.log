@@ -506,3 +506,259 @@ INFO: Top10-es adatbázis betöltődött.
 INFO: Az adatbázis megjelenítő képernyő betöltődik.
 2021-05-17 22:07:40 [JavaFX Application Thread] controller.ScoreController.quitGame()
 INFO: Bezáródik a Quiz.
+2021-05-17 22:09:05 [main] model.XmlReader.XmlRead()
+INFO: XML beolvasás megkezdése
+2021-05-17 22:09:06 [main] model.XmlReader.XmlRead()
+INFO: Kérdésekből álló ArrayList() visszaadása.
+2021-05-17 22:09:06 [main] model.XmlReader.XmlRead()
+INFO: XML beolvasás megkezdése
+2021-05-17 22:09:06 [main] model.XmlReader.XmlRead()
+INFO: Kérdésekből álló ArrayList() visszaadása.
+2021-05-17 22:09:06 [main] model.XmlReader.XmlRead()
+INFO: XML beolvasás megkezdése
+2021-05-17 22:09:06 [main] model.XmlReader.XmlRead()
+INFO: Kérdésekből álló ArrayList() visszaadása.
+2021-05-17 22:10:29 [main] model.XmlReader.XmlRead()
+INFO: XML beolvasás megkezdése
+2021-05-17 22:10:29 [main] model.XmlReader.XmlRead()
+INFO: Kérdésekből álló ArrayList() visszaadása.
+2021-05-17 22:11:34 [main] model.XmlReader.XmlRead()
+INFO: XML beolvasás megkezdése
+2021-05-17 22:11:34 [main] model.XmlReader.XmlRead()
+INFO: Kérdésekből álló ArrayList() visszaadása.
+2021-05-17 22:11:45 [main] model.XmlReader.XmlRead()
+INFO: XML beolvasás megkezdése
+2021-05-17 22:11:45 [main] model.XmlReader.XmlRead()
+INFO: Kérdésekből álló ArrayList() visszaadása.
+2021-05-17 22:11:45 [main] model.XmlReader.XmlRead()
+INFO: XML beolvasás megkezdése
+2021-05-17 22:11:45 [main] model.XmlReader.XmlRead()
+INFO: Kérdésekből álló ArrayList() visszaadása.
+2021-05-17 22:11:45 [main] model.XmlReader.XmlRead()
+INFO: XML beolvasás megkezdése
+2021-05-17 22:11:45 [main] model.XmlReader.XmlRead()
+INFO: Kérdésekből álló ArrayList() visszaadása.
+2021-05-17 22:40:44 [JavaFX Application Thread] controller.LaunchController.initialize()
+INFO: Betöltődik az LaunchController initialize() függvényben szereplő Button és Textfield vizuális beállítása.
+2021-05-17 22:40:44 [JavaFX Application Thread] main.MyApplication.start()
+INFO: A Quiz játék betöltőképernyője betöltődik, beállítódik a cím és a Stage.
+2021-05-17 22:40:48 [JavaFX Application Thread] model.XmlReader.XmlRead()
+INFO: XML beolvasás megkezdése
+2021-05-17 22:40:48 [JavaFX Application Thread] model.XmlReader.XmlRead()
+INFO: Kérdésekből álló ArrayList() visszaadása.
+2021-05-17 22:40:48 [JavaFX Application Thread] model.Question.getoneQuestion()
+INFO: Kérdés legenerálása.
+2021-05-17 22:40:48 [JavaFX Application Thread] controller.GameController.standardButtonColor()
+INFO: Button-ok vizuális megjelenítésének beállítása.
+2021-05-17 22:40:48 [JavaFX Application Thread] controller.GameController.initData()
+INFO: GameController kezdő értékeinek beállítása.
+2021-05-17 22:40:48 [JavaFX Application Thread] controller.GameController.initialize()
+INFO: GameController betöltése sikeres.
+2021-05-17 22:40:48 [JavaFX Application Thread] controller.LaunchController.startAction()
+INFO: Az első kérdés betöltődik.
+2021-05-17 22:40:49 [JavaFX Application Thread] controller.GameController.setDisableButton()
+INFO: Button-ok letiltása.
+2021-05-17 22:40:49 [JavaFX Application Thread] controller.GameController.answerclick3()
+INFO: Harmadik válasz helytelen.
+2021-05-17 22:40:49 [JavaFX Application Thread] controller.GameController.getGreen()
+INFO: Helyes válasz lekérdezése.
+2021-05-17 22:40:49 [JavaFX Application Thread] controller.GameController.timer()
+INFO: Időzítő meghívása.
+2021-05-17 22:40:52 [JavaFX Application Thread] controller.GameController.setScreen()
+INFO: Képernyő megjelenítése.
+2021-05-17 22:40:52 [JavaFX Application Thread] controller.GameController.newQuestion()
+INFO: Új kérdés legenerálás.
+2021-05-17 22:40:52 [JavaFX Application Thread] model.Question.getoneQuestion()
+INFO: Kérdés legenerálása.
+2021-05-17 22:40:52 [JavaFX Application Thread] controller.GameController.standardButtonColor()
+INFO: Button-ok vizuális megjelenítésének beállítása.
+2021-05-17 22:40:52 [JavaFX Application Thread] controller.GameController.setEnableButton()
+INFO: Button-ok engedélyezése.
+2021-05-17 22:40:53 [JavaFX Application Thread] controller.GameController.setDisableButton()
+INFO: Button-ok letiltása.
+2021-05-17 22:40:53 [JavaFX Application Thread] controller.GameController.answerclick2()
+INFO: Második válasz helytelen.
+2021-05-17 22:40:53 [JavaFX Application Thread] controller.GameController.getGreen()
+INFO: Helyes válasz lekérdezése.
+2021-05-17 22:40:53 [JavaFX Application Thread] controller.GameController.timer()
+INFO: Időzítő meghívása.
+2021-05-17 22:40:56 [JavaFX Application Thread] controller.GameController.setScreen()
+INFO: Képernyő megjelenítése.
+2021-05-17 22:40:56 [JavaFX Application Thread] controller.GameController.newQuestion()
+INFO: Új kérdés legenerálás.
+2021-05-17 22:40:56 [JavaFX Application Thread] model.Question.getoneQuestion()
+INFO: Kérdés legenerálása.
+2021-05-17 22:40:56 [JavaFX Application Thread] controller.GameController.standardButtonColor()
+INFO: Button-ok vizuális megjelenítésének beállítása.
+2021-05-17 22:40:56 [JavaFX Application Thread] controller.GameController.setEnableButton()
+INFO: Button-ok engedélyezése.
+2021-05-17 22:40:58 [JavaFX Application Thread] controller.GameController.setDisableButton()
+INFO: Button-ok letiltása.
+2021-05-17 22:40:58 [JavaFX Application Thread] controller.GameController.answerclick3()
+INFO: Harmadik válasz helyes.
+2021-05-17 22:40:58 [JavaFX Application Thread] controller.GameController.timer()
+INFO: Időzítő meghívása.
+2021-05-17 22:41:01 [JavaFX Application Thread] controller.GameController.setScreen()
+INFO: Képernyő megjelenítése.
+2021-05-17 22:41:01 [JavaFX Application Thread] controller.GameController.newQuestion()
+INFO: Új kérdés legenerálás.
+2021-05-17 22:41:01 [JavaFX Application Thread] model.Question.getoneQuestion()
+INFO: Kérdés legenerálása.
+2021-05-17 22:41:01 [JavaFX Application Thread] controller.GameController.standardButtonColor()
+INFO: Button-ok vizuális megjelenítésének beállítása.
+2021-05-17 22:41:01 [JavaFX Application Thread] controller.GameController.setEnableButton()
+INFO: Button-ok engedélyezése.
+2021-05-17 22:41:02 [JavaFX Application Thread] controller.GameController.setDisableButton()
+INFO: Button-ok letiltása.
+2021-05-17 22:41:02 [JavaFX Application Thread] controller.GameController.answerclick3()
+INFO: Harmadik válasz helyes.
+2021-05-17 22:41:02 [JavaFX Application Thread] controller.GameController.timer()
+INFO: Időzítő meghívása.
+2021-05-17 22:41:05 [JavaFX Application Thread] controller.GameController.setScreen()
+INFO: Képernyő megjelenítése.
+2021-05-17 22:41:05 [JavaFX Application Thread] controller.GameController.newQuestion()
+INFO: Új kérdés legenerálás.
+2021-05-17 22:41:05 [JavaFX Application Thread] model.Question.getoneQuestion()
+INFO: Kérdés legenerálása.
+2021-05-17 22:41:05 [JavaFX Application Thread] controller.GameController.standardButtonColor()
+INFO: Button-ok vizuális megjelenítésének beállítása.
+2021-05-17 22:41:05 [JavaFX Application Thread] controller.GameController.setEnableButton()
+INFO: Button-ok engedélyezése.
+2021-05-17 22:41:10 [JavaFX Application Thread] controller.GameController.setDisableButton()
+INFO: Button-ok letiltása.
+2021-05-17 22:41:10 [JavaFX Application Thread] controller.GameController.answerclick1()
+INFO: Első válasz helyes.
+2021-05-17 22:41:10 [JavaFX Application Thread] controller.GameController.timer()
+INFO: Időzítő meghívása.
+2021-05-17 22:41:16 [JavaFX Application Thread] model.Database.addUsertoDB()
+INFO: User hozzáadása az adatbázishoz megkezdődik.
+2021-05-17 22:41:17 [JavaFX Application Thread] model.Database.addUsertoDB()
+INFO: Sikeres user hozzáadás az adatbázishoz.
+2021-05-17 22:41:17 [JavaFX Application Thread] controller.EndController.initialize()
+INFO: Betöltődik az EndController initialize() függvényben szereplő Button vizuális beállítás.
+2021-05-17 22:41:17 [JavaFX Application Thread] controller.GameController.loadEnd()
+INFO: EndController, end.fxml betöltése
+2021-05-17 22:41:19 [JavaFX Application Thread] controller.EndController.quitGame()
+INFO: Bezáródik a Quiz.
+2021-05-17 23:19:35 [JavaFX Application Thread] controller.LaunchController.initialize()
+INFO: Betöltődik az LaunchController initialize() függvényben szereplő Button és Textfield vizuális beállítása.
+2021-05-17 23:19:35 [JavaFX Application Thread] main.MyApplication.start()
+INFO: A Quiz játék betöltőképernyője betöltődik, beállítódik a cím és a Stage.
+2021-05-17 23:19:43 [JavaFX Application Thread] model.XmlReader.XmlRead()
+INFO: XML beolvasás megkezdése
+2021-05-17 23:19:43 [JavaFX Application Thread] model.XmlReader.XmlRead()
+INFO: Kérdésekből álló ArrayList() visszaadása.
+2021-05-17 23:19:43 [JavaFX Application Thread] model.Question.getoneQuestion()
+INFO: Kérdés legenerálása.
+2021-05-17 23:19:43 [JavaFX Application Thread] controller.GameController.standardButtonColor()
+INFO: Button-ok vizuális megjelenítésének beállítása.
+2021-05-17 23:19:43 [JavaFX Application Thread] controller.GameController.initData()
+INFO: GameController kezdő értékeinek beállítása.
+2021-05-17 23:19:43 [JavaFX Application Thread] controller.GameController.initialize()
+INFO: GameController betöltése sikeres.
+2021-05-17 23:19:43 [JavaFX Application Thread] controller.LaunchController.startAction()
+INFO: Az első kérdés betöltődik.
+2021-05-17 23:19:44 [JavaFX Application Thread] controller.GameController.setDisableButton()
+INFO: Button-ok letiltása.
+2021-05-17 23:19:44 [JavaFX Application Thread] controller.GameController.answerclick3()
+INFO: Harmadik válasz helytelen.
+2021-05-17 23:19:44 [JavaFX Application Thread] controller.GameController.getGreen()
+INFO: Helyes válasz lekérdezése.
+2021-05-17 23:19:44 [JavaFX Application Thread] controller.GameController.timer()
+INFO: Időzítő meghívása.
+2021-05-17 23:19:47 [JavaFX Application Thread] controller.GameController.setScreen()
+INFO: Képernyő megjelenítése.
+2021-05-17 23:19:47 [JavaFX Application Thread] controller.GameController.newQuestion()
+INFO: Új kérdés legenerálás.
+2021-05-17 23:19:47 [JavaFX Application Thread] model.Question.getoneQuestion()
+INFO: Kérdés legenerálása.
+2021-05-17 23:19:47 [JavaFX Application Thread] controller.GameController.standardButtonColor()
+INFO: Button-ok vizuális megjelenítésének beállítása.
+2021-05-17 23:19:47 [JavaFX Application Thread] controller.GameController.setEnableButton()
+INFO: Button-ok engedélyezése.
+2021-05-17 23:19:47 [JavaFX Application Thread] controller.GameController.setDisableButton()
+INFO: Button-ok letiltása.
+2021-05-17 23:19:47 [JavaFX Application Thread] controller.GameController.answerclick2()
+INFO: Második válasz helytelen.
+2021-05-17 23:19:47 [JavaFX Application Thread] controller.GameController.getGreen()
+INFO: Helyes válasz lekérdezése.
+2021-05-17 23:19:47 [JavaFX Application Thread] controller.GameController.timer()
+INFO: Időzítő meghívása.
+2021-05-17 23:19:50 [JavaFX Application Thread] controller.GameController.setScreen()
+INFO: Képernyő megjelenítése.
+2021-05-17 23:19:50 [JavaFX Application Thread] controller.GameController.newQuestion()
+INFO: Új kérdés legenerálás.
+2021-05-17 23:19:50 [JavaFX Application Thread] model.Question.getoneQuestion()
+INFO: Kérdés legenerálása.
+2021-05-17 23:19:50 [JavaFX Application Thread] controller.GameController.standardButtonColor()
+INFO: Button-ok vizuális megjelenítésének beállítása.
+2021-05-17 23:19:50 [JavaFX Application Thread] controller.GameController.setEnableButton()
+INFO: Button-ok engedélyezése.
+2021-05-17 23:19:51 [JavaFX Application Thread] controller.GameController.setDisableButton()
+INFO: Button-ok letiltása.
+2021-05-17 23:19:51 [JavaFX Application Thread] controller.GameController.answerclick1()
+INFO: Első válasz helytelen.
+2021-05-17 23:19:51 [JavaFX Application Thread] controller.GameController.getGreen()
+INFO: Helyes válasz lekérdezése.
+2021-05-17 23:19:51 [JavaFX Application Thread] controller.GameController.timer()
+INFO: Időzítő meghívása.
+2021-05-17 23:19:54 [JavaFX Application Thread] controller.GameController.setScreen()
+INFO: Képernyő megjelenítése.
+2021-05-17 23:19:54 [JavaFX Application Thread] controller.GameController.newQuestion()
+INFO: Új kérdés legenerálás.
+2021-05-17 23:19:54 [JavaFX Application Thread] model.Question.getoneQuestion()
+INFO: Kérdés legenerálása.
+2021-05-17 23:19:54 [JavaFX Application Thread] controller.GameController.standardButtonColor()
+INFO: Button-ok vizuális megjelenítésének beállítása.
+2021-05-17 23:19:54 [JavaFX Application Thread] controller.GameController.setEnableButton()
+INFO: Button-ok engedélyezése.
+2021-05-17 23:19:54 [JavaFX Application Thread] controller.GameController.setDisableButton()
+INFO: Button-ok letiltása.
+2021-05-17 23:19:54 [JavaFX Application Thread] controller.GameController.answerclick3()
+INFO: Harmadik válasz helyes.
+2021-05-17 23:19:54 [JavaFX Application Thread] controller.GameController.timer()
+INFO: Időzítő meghívása.
+2021-05-17 23:19:57 [JavaFX Application Thread] controller.GameController.setScreen()
+INFO: Képernyő megjelenítése.
+2021-05-17 23:19:57 [JavaFX Application Thread] controller.GameController.newQuestion()
+INFO: Új kérdés legenerálás.
+2021-05-17 23:19:57 [JavaFX Application Thread] model.Question.getoneQuestion()
+INFO: Kérdés legenerálása.
+2021-05-17 23:19:57 [JavaFX Application Thread] controller.GameController.standardButtonColor()
+INFO: Button-ok vizuális megjelenítésének beállítása.
+2021-05-17 23:19:57 [JavaFX Application Thread] controller.GameController.setEnableButton()
+INFO: Button-ok engedélyezése.
+2021-05-17 23:19:58 [JavaFX Application Thread] controller.GameController.setDisableButton()
+INFO: Button-ok letiltása.
+2021-05-17 23:19:58 [JavaFX Application Thread] controller.GameController.answerclick1()
+INFO: Első válasz helytelen.
+2021-05-17 23:19:58 [JavaFX Application Thread] controller.GameController.getGreen()
+INFO: Helyes válasz lekérdezése.
+2021-05-17 23:19:58 [JavaFX Application Thread] controller.GameController.timer()
+INFO: Időzítő meghívása.
+2021-05-17 23:20:04 [JavaFX Application Thread] model.Database.addUsertoDB()
+INFO: User hozzáadása az adatbázishoz megkezdődik.
+2021-05-17 23:20:05 [JavaFX Application Thread] model.Database.addUsertoDB()
+INFO: Sikeres user hozzáadás az adatbázishoz.
+2021-05-17 23:20:05 [JavaFX Application Thread] controller.EndController.initialize()
+INFO: Betöltődik az EndController initialize() függvényben szereplő Button vizuális beállítás.
+2021-05-17 23:20:05 [JavaFX Application Thread] controller.GameController.loadEnd()
+INFO: EndController, end.fxml betöltése
+2021-05-17 23:20:07 [JavaFX Application Thread] controller.ScoreController.initialize()
+INFO: Button vizuális beállítása.
+2021-05-17 23:20:07 [JavaFX Application Thread] controller.ScoreController.writeStandardData()
+INFO: Standart adatbázis betöltődik.
+2021-05-17 23:20:07 [JavaFX Application Thread] model.Database.getUsers()
+INFO: Standard adatbázis lekérdezés.
+2021-05-17 23:20:07 [JavaFX Application Thread] controller.ScoreController.initialize()
+INFO: Standart adatbázis betöltődött.
+2021-05-17 23:20:07 [JavaFX Application Thread] controller.ScoreController.writeTopTenData()
+INFO: Top10-es adatbázis betöltődik.
+2021-05-17 23:20:07 [JavaFX Application Thread] model.Database.getTopTen()
+INFO: Top10-es adatbázis lekérdezés.
+2021-05-17 23:20:07 [JavaFX Application Thread] controller.ScoreController.initialize()
+INFO: Top10-es adatbázis betöltődött.
+2021-05-17 23:20:07 [JavaFX Application Thread] controller.EndController.swichDataBase()
+INFO: Az adatbázis megjelenítő képernyő betöltődik.
+2021-05-17 23:20:25 [JavaFX Application Thread] controller.ScoreController.quitGame()
+INFO: Bezáródik a Quiz.
