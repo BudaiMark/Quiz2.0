@@ -90,14 +90,6 @@ public class GameController{
         this.username = username;
     }
 
-    /**
-     * @return Egy kérdést visszaadó függvény.
-     */
-    public Question newQuestion(){
-        Logger.info("Új kérdés legenerálás.");
-        return Question.getoneQuestion(questionarray);
-    }
-
 
     /**
      * {@code answerclick1(), answerclick2(), answerclick3(), answerclick4()}
@@ -191,7 +183,7 @@ public class GameController{
 
             if (questionnumber < QUESTION+1) {
                 Logger.info("Képernyő megjelenítése.");
-                Question question = newQuestion();
+                Question question = Question.getoneQuestion(questionarray);
                 standardButtonColor();
                 globalQuestion = question;
                 questionLabel.setText(question.getQuestion());
@@ -327,6 +319,7 @@ public class GameController{
     public void initData(){
 
         Question question = Question.getoneQuestion(questionarray);
+        Logger.info("Új kérdés legenerálás.");
         standardButtonColor();
         showscore.setVisible(false);
         globalQuestion = question;

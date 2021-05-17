@@ -26,7 +26,7 @@ public class XmlReader {
      * @return Egy kérdésekből álló listával tér visssza.
      */
 
-    public ArrayList<Question> XmlRead(){
+    public  ArrayList<Question> XmlRead(){
         Logger.info("XML beolvasás megkezdése");
         ArrayList<Question>questionlist = new ArrayList<>();
         try {

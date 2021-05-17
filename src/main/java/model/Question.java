@@ -85,11 +85,11 @@ public class Question {
      */
     public static Question getoneQuestion(ArrayList<Question>questionarray){
         Logger.info("Kérdés legenerálása.");
-
         return questionarray.get(generateRandomNumber());
-
-
     }
+    /**
+     * {@code generateRandomNumber()}Random számot generál.
+     */
     public static int generateRandomNumber(){
         Random random = new Random();
         int rand = random.nextInt(3);

@@ -57,6 +57,11 @@ public class QuestionTest {
         assertTrue(random< questionarray.size());
     }
 
+    @Test
+    public void isItTrueSize() {
+        assertFalse(0>questionarray.size());
+    }
+
 
 
 
