@@ -15,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.Question;
+import model.User;
 import model.XmlReader;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
@@ -55,6 +56,8 @@ import javafx.event.EventHandler;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.Instant;
+
+import static model.Database.addUsertoDB;
 
 /**
  * Ebben az osztályban található a játék logikájának megjelenítése.
@@ -110,8 +113,13 @@ public class GameController{
      *A kérdés, illetve a pont növelését elősegítő változók.
      */
 
-    public int numberofscore= 0;
-    public int questionnumber = 1;
+    private int numberofscore= 0;
+    private int questionnumber = 1;
+    private String username;
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     /**
      * Egy kérdést visszaadó függvény.
@@ -320,6 +328,7 @@ public class GameController{
      */
     @FXML
     public void loadEnd(ActionEvent actionEvent) throws IOException {
+        addUsertoDB(new User(username,numberofscore));
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/end.fxml"));
         Parent root = fxmlLoader.load();
         EndController controller = fxmlLoader.getController();
