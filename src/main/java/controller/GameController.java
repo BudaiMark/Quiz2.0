@@ -39,12 +39,13 @@ public class GameController{
     private static final String STANDARD_BUTTON = "-fx-background-color: transparent; -fx-border-color: black;";
     private static final String GREEN_BUTTON = "-fx-background-color: lightgreen; -fx-border-color: black";
     private static final String RED_BUTTON = "-fx-background-color: red; -fx-border-color: black";
-    private final int QUESTION = 1;
+    private final int QUESTION = 5;
     private int numberofscore= 0;
     private int questionnumber = 1;
     /**
      * {@code questionarray}Az xml fájlból beolvasott tartalom kérdéssé egyesített elemeinek listája
      */
+
     XmlReader reader = new XmlReader();
     ArrayList<Question>questionarray =reader.XmlRead();
     Question globalQuestion;
@@ -258,7 +259,6 @@ public class GameController{
                     time.stop();
                 seconds--;
                 if(seconds==-1&& questionnumber<QUESTION+1) {
-
                     setScreen();
                     setEnableButton();
                 }else if(!(questionnumber<QUESTION+1)){

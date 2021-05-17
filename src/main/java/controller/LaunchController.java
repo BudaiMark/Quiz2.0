@@ -43,11 +43,6 @@ public class LaunchController {
     @FXML
     private Button startButton;
 
-    private String username;
-
-    public String getUsername() {
-        return username;
-    }
 
     /**
      * {@code startAction()}Egy gomb megnyomásának hatására lefut a metódus amiben egy mezőt vizsgálunk, hogy üres-e,
