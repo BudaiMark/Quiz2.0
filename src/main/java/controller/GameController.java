@@ -1,8 +1,6 @@
 package controller;
-import com.sun.javafx.scene.control.Properties;
-import com.sun.javafx.stage.StageHelper;
+
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,52 +9,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.Question;
 import model.User;
 import model.XmlReader;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-
-import org.w3c.dom.Element;
-
-
-
-
+import org.tinylog.Logger;
 import javafx.util.Duration;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-
-import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import javafx.fxml.FXML;
-
-import javax.net.ssl.X509KeyManager;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-import org.w3c.dom.Document;
-
-
-import org.w3c.dom.Element;
-import java.io.File;
-import java.util.Random;
-import javafx.util.Duration;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-
-
-import lombok.extern.slf4j.Slf4j;
-
-import java.time.Instant;
-
 import static model.Database.addUsertoDB;
 
 /**
@@ -129,6 +92,7 @@ public class GameController{
      * @return Egy kérdést visszaadó függvény.
      */
     public Question newQuestion(){
+        Logger.info("Új kérdés legenerálás.");
         return Question.getoneQuestion(questionarray);
     }
 
@@ -145,13 +109,14 @@ public class GameController{
     public void answerclick1(MouseEvent mouseEvent) {
             setDisableButton();
             if(globalQuestion.getResult().equals(answer1.getId())){
-
+                Logger.info("Első válasz helyes.");
                 answer1.setStyle(GREEN_BUTTON);
                 numberofscore++;
                 score.setText(Integer.toString(numberofscore));
                 timer();
 
             }else{
+                Logger.info("Első válasz helytelen.");
                 answer1.setStyle(RED_BUTTON);
                 getGreen();
                 timer();
@@ -162,7 +127,7 @@ public class GameController{
             setDisableButton();
             if(globalQuestion.getResult().equals(answer2.getId())){
 
-
+                Logger.info("Második válasz helyes.");
                 answer2.setStyle(GREEN_BUTTON);
                 numberofscore++;
                 score.setText(Integer.toString(numberofscore));
@@ -170,6 +135,7 @@ public class GameController{
 
 
             }else{
+                Logger.info("Második válasz helytelen.");
                 answer2.setStyle(RED_BUTTON);
                 getGreen();
                 timer();
@@ -181,13 +147,14 @@ public class GameController{
             setDisableButton();
 
             if(globalQuestion.getResult().equals(answer3.getId())){
-
+                Logger.info("Harmadik válasz helyes.");
                 answer3.setStyle(GREEN_BUTTON);
                 numberofscore++;
                 score.setText(Integer.toString(numberofscore));
                 timer();
 
             }else{
+                Logger.info("Harmadik válasz helytelen.");
                 answer3.setStyle(RED_BUTTON);
                 getGreen();
                 timer();
@@ -196,6 +163,7 @@ public class GameController{
     public void answerclick4(MouseEvent mouseEvent) {
             setDisableButton();
             if(globalQuestion.getResult().equals(answer4.getId())){
+                Logger.info("Negyedik válasz helyes.");
                 answer4.setStyle(GREEN_BUTTON);
                 numberofscore++;
                 score.setText(Integer.toString(numberofscore));
@@ -203,6 +171,7 @@ public class GameController{
 
             }
             else{
+                Logger.info("Negyedik válasz helytelen.");
                 answer4.setStyle(RED_BUTTON);
                 getGreen();
                 timer();
@@ -219,6 +188,7 @@ public class GameController{
     public void setScreen(){
 
             if (questionnumber < QUESTION+1) {
+                Logger.info("Képernyő megjelenítése.");
                 Question question = newQuestion();
                 standardButtonColor();
                 globalQuestion = question;
@@ -238,6 +208,7 @@ public class GameController{
      * {@code getGreen()}Lekérdezzük a helyes választ abban az esetben, ha a játékos nem találta volna el a kérdést.
      */
     public void getGreen(){
+        Logger.info("Helyes válasz lekérdezése.");
         if(globalQuestion.getResult().equals("answer1")){
             answer1.setStyle(GREEN_BUTTON);}
         else if(globalQuestion.getResult().equals("answer2")){
@@ -256,6 +227,7 @@ public class GameController{
      */
 
     public void standardButtonColor(){
+        Logger.info("Button-ok vizuális megjelenítésének beállítása.");
         answer1.setStyle(STANDARD_BUTTON);
         answer2.setStyle(STANDARD_BUTTON);
         answer3.setStyle(STANDARD_BUTTON);
@@ -273,7 +245,7 @@ public class GameController{
      */
 
     public void timer(){
-
+        Logger.info("Időzítő meghívása.");
         questionnumber++;
         Timeline time = new Timeline();
         time.setCycleCount(Timeline.INDEFINITE);
@@ -306,6 +278,7 @@ public class GameController{
      * A válaszgomb megnyomását követően történik meg, hogy ne tudjon több scoret kapni a játékos, ugyanazon gomb megnyomásával.
      */
     public void setDisableButton(){
+        Logger.info("Button-ok letiltása.");
         answer1.setDisable(true);
         answer2.setDisable(true);
         answer3.setDisable(true);
@@ -317,6 +290,7 @@ public class GameController{
      * Minden új kérdés legenerálását követően elérhető a funkció.
      */
     public void setEnableButton(){
+        Logger.info("Button-ok engedélyezése.");
         answer1.setDisable(false);
         answer2.setDisable(false);
         answer3.setDisable(false);
@@ -340,6 +314,7 @@ public class GameController{
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
+        Logger.info("EndController, end.fxml betöltése");
 
 
     }
@@ -361,7 +336,7 @@ public class GameController{
         answer4.setText(question.getAnswer4());
         score.setText(Integer.toString(numberofscore));
         questionnum.setText(Integer.toString(questionnumber));
-
+        Logger.info("GameController kezdő értékeinek beállítása.");
 
 
     }
@@ -373,6 +348,7 @@ public class GameController{
     public void initialize() {
 
         initData();
+        Logger.info("GameController betöltése sikeres.");
 
     }
 

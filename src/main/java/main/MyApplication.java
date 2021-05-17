@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.tinylog.Logger;
 
 /**
  *
@@ -26,6 +27,8 @@ public class MyApplication extends Application {
         primaryStage.setResizable(false);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+        Logger.info("A Quiz játék betöltőképernyője betöltődik, beállítódik a cím és a Stage.");
+
     }
 
 }

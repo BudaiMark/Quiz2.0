@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
+import org.tinylog.Logger;
 
 import java.io.IOException;
 /**
@@ -58,6 +59,7 @@ public class LaunchController {
     public void startAction(ActionEvent actionEvent) throws IOException {
         if (playerTextfield.getText().isEmpty()) {
             errorLabel.setText("Játékos neve üres");
+            Logger.warn("Játékos neve üres");
         }
 
 
@@ -69,6 +71,7 @@ public class LaunchController {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
+            Logger.info("Az első kérdés betöltődik.");
 
         }
     }
@@ -79,9 +82,9 @@ public class LaunchController {
     @FXML
     public void initialize(){
 
-
         startButton.setStyle(STANDARD);
         playerTextfield.setStyle(STANDARD);
+        Logger.info("Betöltődik az LaunchController initialize() függvényben szereplő Button és Textfield vizuális beállítása.");
 
 
     }
