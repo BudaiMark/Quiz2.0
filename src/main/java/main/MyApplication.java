@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 public class MyApplication extends Application {
 
     /**
-     * A {@code start} felelős a primaryStage megjelenítéséért.
+     * A {@code start()} felelős a primaryStage megjelenítéséért.
      * @param primaryStage Rajta történik a megjelenítés.
      * @throws Exception Továbbdobjuk a keletkezett kivételt.
      */

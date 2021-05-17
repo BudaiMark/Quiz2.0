@@ -16,14 +16,14 @@ import java.net.URL;
 import java.util.ArrayList;
 
 /**
- * Az Xml beolvasást végző osztály.
+ * {@code XmlReader}Az Xml beolvasást végző osztály.
  */
 public class XmlReader {
 
     /**
-     * Itt történik a tényleges beolvasás egy ArrayList-el térünk vissza, ami a kérdéseket tartalmazza.
+     * {@code XmlRead()}Itt történik a tényleges beolvasás egy ArrayList-el térünk vissza, ami a kérdéseket tartalmazza.
      * Tag-ek illetve id-k alapján történik az adatok szétválasztása.
-     * @return
+     * @return Egy kérdésekből álló listával tér visssza.
      */
 
     public ArrayList<Question> XmlRead(){

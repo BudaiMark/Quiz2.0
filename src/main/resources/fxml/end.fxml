@@ -32,7 +32,7 @@
                 <Font name="Dyuthi" size="36.0" />
             </font>
         </Label>
-        <Button fx:id="dataBaseButton" layoutX="388.0" layoutY="271.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="105.0" text="Scores" textFill="#1913c6">
+        <Button fx:id="dataBaseButton" layoutX="388.0" layoutY="271.0" mnemonicParsing="false" onAction="#swichDataBase" prefHeight="51.0" prefWidth="105.0" text="Scores" textFill="#1913c6">
             <font>
                 <Font name="Dyuthi" size="18.0" />
             </font>

@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import model.Question;
 import model.XmlReader;
 import org.w3c.dom.Document;
@@ -81,7 +82,7 @@ public class EndController {
     private Button dataBaseButton;
 
     /**
-     * Setter metódus a score értékének beállításához, erre van szükség, hogy az előző kontrollerben szereplő adatot
+     * {@code setScorevalue()}Setter metódus a score értékének beállításához, erre van szükség, hogy az előző kontrollerben szereplő adatot
      * megjelenítsünk ezen a képernyőn is.
      *
      */
@@ -92,9 +93,9 @@ public class EndController {
     }
 
     /**
-     * A kilépő  funkciónak a megvalósítása.
-     * @param actionEvent
-     * @throws IOException
+     * {@code quitGame()}A kilépő  funkciónak a megvalósítása.
+     * @param actionEvent Esemény hatására lefutnak a benne szereplő utasytások.
+     * @throws IOException IO kivételt dobhat.
      */
     @FXML
     public void quitGame(ActionEvent actionEvent) throws IOException{
@@ -103,8 +104,18 @@ public class EndController {
 
     }
 
+    @FXML
+    public void swichDataBase(ActionEvent actionEvent) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/score.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+
+    }
+
     /**
-     * Ez a metódus fut le először, a konstruktorhoz nagyon hasonló, azonban innen elérjük az fxml fájl tagjait.
+     * {@code initialize()}Ez a metódus fut le először, a konstruktorhoz nagyon hasonló, azonban innen elérjük az fxml fájl tagjait.
      */
     @FXML
     public void initialize(){

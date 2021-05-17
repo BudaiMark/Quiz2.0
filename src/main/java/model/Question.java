@@ -37,12 +37,12 @@ public class Question {
 
     /**
      * Az osztály konstruktora példány létrehozásakor a felsorolt paramétereket várja.
-     * @param question
-     * @param answer1
-     * @param answer2
-     * @param answer3
-     * @param answer4
-     * @param result
+     * @param question Kérdés.
+     * @param answer1 Első válasz.
+     * @param answer2 Második válasz.
+     * @param answer3 Harmadik válasz.
+     * @param answer4 Negyedik válasz.
+     * @param result Eredmény.
      */
     public Question(String question, String answer1,String answer2,String answer3,String answer4,String result){
         this.question  = question;
@@ -54,14 +54,15 @@ public class Question {
 
     }
     /**
-        Üres konstruktor.
+     *  {@code Question()}Üres konstruktor.
      */
     public Question() {
 
     }
 
     /**
-     *Getter setter metódusok az osztályváltozókhoz.
+     *{@code getoneQuestion(), getAnswer1(),getAnswer2(),getAnswer3(),getAnswer4(),getResult}Getter metódusok az osztályváltozókhoz.
+     *{@code setoneQuestion(), setAnswer1(),setAnswer2(),setAnswer3(),setAnswer4(),setResult}Setter metódusok az osztályváltozókhoz.
      */
 
     public String getQuestion() {
@@ -112,7 +113,7 @@ public class Question {
         this.result = result;
     }
     /**
-     * Kérdéslistából kisorsol egy random elemet.
+     * {@code getoneQuestion()}Kérdéslistából kisorsol egy random elemet.
      */
     public static Question getoneQuestion(ArrayList<Question>questionarray){
         Random random = new Random();

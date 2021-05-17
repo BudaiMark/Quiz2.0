@@ -3,7 +3,7 @@ package main;
 import javafx.application.Application;
 
 /**
- * Ebben az osztályban kezdődik a játék lefutása.
+ * {@code main()} Ebben az osztályban kezdődik a játék lefutása {@code main()}
  */
 public class Main {
 

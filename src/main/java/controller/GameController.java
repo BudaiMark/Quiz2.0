@@ -60,21 +60,27 @@ import java.time.Instant;
 import static model.Database.addUsertoDB;
 
 /**
- * Ebben az osztályban található a játék logikájának megjelenítése.
+ * {@code GameController()}Ebben az osztályban található a játék logikájának megjelenítése.
  */
 
 public class GameController{
 
     /**
-     * Osztályváltozók, végleges változók létrehozása.
+     * {@code startingTime, seconds, STANDARD_BUTTON, GREEN_BUTTON, RED_BUTTON, QUESTION}Osztályváltozók, végleges változók létrehozása.
      */
-    private final int startingTime = 2;
-    private int seconds = startingTime;
+    /**
+     *{@code numberofscore, questionnumber}A kérdés, illetve a pont növelését elősegítő változók.
+     */
+    private final int STARTINGTIME = 2;
+    private int seconds = STARTINGTIME;
     private static final String STANDARD_BUTTON = "-fx-background-color: transparent; -fx-border-color: black;";
     private static final String GREEN_BUTTON = "-fx-background-color: lightgreen; -fx-border-color: black";
     private static final String RED_BUTTON = "-fx-background-color: red; -fx-border-color: black";
+    private final int QUESTION = 1;
+    private int numberofscore= 0;
+    private int questionnumber = 1;
     /**
-     * Az xml fájlból beolvasott tartalom kérdéssé egyesített elemeinek listája
+     * {@code questionarray}Az xml fájlból beolvasott tartalom kérdéssé egyesített elemeinek listája
      */
     XmlReader reader = new XmlReader();
     ArrayList<Question>questionarray =reader.XmlRead();
@@ -82,7 +88,7 @@ public class GameController{
 
 
     /**
-     * Az fxml-ben szereplő vizuálisan látható osztályok példányosítása.
+     * {@code questionLabel, score, questionnum, answer1, answer2, answer3, answer4}Az fxml-ben szereplő vizuálisan látható osztályok példányosítása.
      */
     @FXML
     private Label questionLabel;
@@ -109,12 +115,10 @@ public class GameController{
     @FXML
     private Button showscore;
 
-    /**
-     *A kérdés, illetve a pont növelését elősegítő változók.
-     */
 
-    private int numberofscore= 0;
-    private int questionnumber = 1;
+    /**
+     * {@code username} A username változó lérehozása, {@code setUsername()}beálítása.
+     */
     private String username;
 
     public void setUsername(String username) {
@@ -122,8 +126,7 @@ public class GameController{
     }
 
     /**
-     * Egy kérdést visszaadó függvény.
-     * @return
+     * @return Egy kérdést visszaadó függvény.
      */
     public Question newQuestion(){
         return Question.getoneQuestion(questionarray);
@@ -131,6 +134,7 @@ public class GameController{
 
 
     /**
+     * {@code answerclick1(), answerclick2(), answerclick3(), answerclick4()}
      * A következő függvények a válaszgomb megnyomását követően lefutó függvények(eventek)
      * amikben látható a gomb lekezelése(meg lehessen-e nyomni), továbbá a bizonyos esetek lekezelése
      * pl. Ha jó gombot nyomott le a felhasználó akkor zöld színnel jelezze a játékos részére
@@ -210,11 +214,11 @@ public class GameController{
     }
 
     /**
-     * Beállítjuk minden új kérdésnél, hogy nézzen ki a képernyő.
+     * {@code setScreen()}Beállítjuk minden új kérdésnél, hogy nézzen ki a képernyő.
      */
     public void setScreen(){
 
-            if (questionnumber < 6) {
+            if (questionnumber < QUESTION+1) {
                 Question question = newQuestion();
                 standardButtonColor();
                 globalQuestion = question;
@@ -231,7 +235,7 @@ public class GameController{
     }
 
     /**
-     * Lekérdezzük a helyes választ abban az esetben, ha a játékos nem találta volna el a kérdést.
+     * {@code getGreen()}Lekérdezzük a helyes választ abban az esetben, ha a játékos nem találta volna el a kérdést.
      */
     public void getGreen(){
         if(globalQuestion.getResult().equals("answer1")){
@@ -248,7 +252,7 @@ public class GameController{
     }
 
     /**
-     *Beállítjuk a gombok alap vizuális kinézetét.
+     *{@code standardButtonColor}Beállítjuk a gombok alap vizuális kinézetét.
      */
 
     public void standardButtonColor(){
@@ -262,7 +266,7 @@ public class GameController{
     }
 
     /**
-     * A timer függvény segít abban hogy a kérdéések között a játkosnak legyen ideje válaszolni, ne egyben fusson le az egész programrész,
+     * {@code timer()}A timer függvény segít abban hogy a kérdéések között a játkosnak legyen ideje válaszolni, ne egyben fusson le az egész programrész,
      * különben nem látnánk semmit az ereményből. Ehhez használunk egy KeyFrame-et, továbbá az utolsó válasz megadása után látható teszi
      * a gombot, aminek megnyomásával megjelenik az eredmény, a kilépő gomb, illetve egy gomb ami a játékosokat tartalmazza.
      *
@@ -281,11 +285,11 @@ public class GameController{
                 if (seconds<=0)
                     time.stop();
                 seconds--;
-                if(seconds==-1&& questionnumber<6) {
+                if(seconds==-1&& questionnumber<QUESTION+1) {
 
                     setScreen();
                     setEnableButton();
-                }else if(!(questionnumber<6)){
+                }else if(!(questionnumber<QUESTION+1)){
                     showscore.setVisible(true);
                 }
 
@@ -294,11 +298,11 @@ public class GameController{
         time.getKeyFrames().add(frame);
         time.playFromStart();
 
-        seconds = startingTime;
+        seconds = STARTINGTIME;
     }
 
     /**
-     * A gombokat elérhetetlenné teszi a felhasználók számára(nem lehet megnyomni).
+     * {@code setDisableButton}A gombokat elérhetetlenné teszi a felhasználók számára(nem lehet megnyomni).
      * A válaszgomb megnyomását követően történik meg, hogy ne tudjon több scoret kapni a játékos, ugyanazon gomb megnyomásával.
      */
     public void setDisableButton(){
@@ -309,7 +313,7 @@ public class GameController{
 
     }
     /**
-     * A gombokat elérhetővé teszi a felhasználók számára(meg lehet nyomni).
+     * {@code setEnableButton}A gombokat elérhetővé teszi a felhasználók számára(meg lehet nyomni).
      * Minden új kérdés legenerálását követően elérhető a funkció.
      */
     public void setEnableButton(){
@@ -321,10 +325,10 @@ public class GameController{
     }
 
     /**
-     * A gomb megnyomását követően betölti a következő fxml-t illetve átadja paraméterül a pontoknak a számát.
+     * {@code loadEnd()}A gomb megnyomását követően betölti a következő fxml-t illetve átadja paraméterül a pontoknak a számát.
      *
-     * @param actionEvent
-     * @throws IOException
+     * @param actionEvent Esemény hatására lefutnak a benne szereplő utasytások.
+     * @throws IOException IO kivételt dobhat a függvény.
      */
     @FXML
     public void loadEnd(ActionEvent actionEvent) throws IOException {
@@ -341,7 +345,7 @@ public class GameController{
     }
 
     /**
-     *Betölti a kezdőértékeket, kérdést, illetve a gombokon szereplő válaszokat.
+     *{@code initData()}Betölti a kezdőértékeket, kérdést, illetve a gombokon szereplő válaszokat.
      */
 
     public void initData(){
@@ -363,7 +367,7 @@ public class GameController{
     }
 
     /**
-     * Ez a metódus fut le először, a konstruktorhoz nagyon hasonló, azonban innen elérjük az fxml fájl tagjait.
+     * {@code initialize()}Ez a metódus fut le először, a konstruktorhoz nagyon hasonló, azonban innen elérjük az fxml fájl tagjait.
      */
     @FXML
     public void initialize() {

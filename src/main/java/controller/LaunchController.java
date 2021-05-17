@@ -49,7 +49,7 @@ public class LaunchController {
     }
 
     /**
-     * Egy gomb megnyomásának hatására lefut a metódus amiben egy mezőt vizsgálunk, hogy üres-e,
+     * {@code startAction()}Egy gomb megnyomásának hatására lefut a metódus amiben egy mezőt vizsgálunk, hogy üres-e,
      * illetve betöltjük az új fxml-t.
      * @param actionEvent A gombhoz tartozó esemény.
      * @throws IOException A lefutása közben adódó Input-Output kivétel.
@@ -74,7 +74,7 @@ public class LaunchController {
     }
 
     /**
-     * {@code initialize}Ez a metódus fut le először, a konstruktorhoz nagyon hasonló, azonban innen elérjük az fxml fájl tagjait.
+     * {@code initialize()}Ez a metódus fut le először, a konstruktorhoz nagyon hasonló, azonban innen elérjük az fxml fájl tagjait.
      */
     @FXML
     public void initialize(){
