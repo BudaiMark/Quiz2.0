@@ -22,182 +22,182 @@
     </questions>
     <questions  id="2">
         <question>
-            Hány lába van egy lónak
+            Ki a C++ "atyja"?
         </question>
         <answer1>
-            3
+            Bjarne Stroustrup
         </answer1>
         <answer2>
-            2
+            James Gosling
         </answer2>
         <answer3>
-            4
+            Arnold Schwarzenegger
         </answer3>
         <answer4>
-            1
+            Guido Van Rossum
         </answer4>
         <result>
-            answer3
+            answer1
         </result>
     </questions>
     <questions  id="3">
         <question>
-            Hány éves BarnaB
+            Mikor robbant ki a második világháború?
         </question>
         <answer1>
-            1
+            1939.09.31
         </answer1>
         <answer2>
-            19
+            1939.09.01
         </answer2>
         <answer3>
-            20
+            1941.09.31
         </answer3>
         <answer4>
-            21
+            1940.09.01
         </answer4>
         <result>
-            answer3
+            answer2
         </result>
     </questions>
     <questions  id="4">
         <question>
-
+            Hány megyéje van magyarországnak?
         </question>
         <answer1>
-
+            16
         </answer1>
         <answer2>
-
+            20
         </answer2>
         <answer3>
-
+            18
         </answer3>
         <answer4>
-
+            19
         </answer4>
         <result>
-
+            answer4
         </result>
     </questions>
     <questions id="5">
         <question>
-
+            Melyik zeneszerző született legkorábban?
         </question>
         <answer1>
-
+            Felix Mendelssohn-Bartholdy
         </answer1>
         <answer2>
-
+            Franz Schubert
         </answer2>
         <answer3>
-
+            Gaetano Donizetti
         </answer3>
         <answer4>
-
+            Wolfgang Amadeus Mozart
         </answer4>
         <result>
-
+            answer4
         </result>
     </questions>
     <questions id="6">
         <question>
-
+            Melyik országból származik az Alfa Romeo?
         </question>
         <answer1>
-
+            Argentína
         </answer1>
         <answer2>
-
+            Olaszország
         </answer2>
         <answer3>
-
+            Franciaország
         </answer3>
         <answer4>
-
+            Németország
         </answer4>
         <result>
-
+            answer2
         </result>
     </questions>
     <questions id="7">
         <question>
-
+            Melyik megyében található Debrece?
         </question>
         <answer1>
-
+            Hajdú-Bihar
         </answer1>
         <answer2>
-
+            Zala
         </answer2>
         <answer3>
-
+            Heves
         </answer3>
         <answer4>
-
+            Vas
         </answer4>
         <result>
-
+            answer1
         </result>
     </questions>
     <questions id="8">
         <question>
-
+            Mikor ereszt tintaszerű anyagot a tintahal?
         </question>
         <answer1>
-
+            Mindig
         </answer1>
         <answer2>
-
+            Alváskor
         </answer2>
         <answer3>
-
+            Támadáskor
         </answer3>
         <answer4>
-
+            Védekezéskor
         </answer4>
         <result>
-
+            answer4
         </result>
     </questions>
     <questions id="9">
         <question>
-
+            Melyik ország területe a legnagyobb?
         </question>
         <answer1>
-
+            Litvánia
         </answer1>
         <answer2>
-
+            Németország
         </answer2>
         <answer3>
-
+            Lettország
         </answer3>
         <answer4>
-
+            Észtország
         </answer4>
         <result>
-
+            answer2
         </result>
     </questions>
     <questions id="10">
         <question>
-
+            Melyik nem birtokos névmás?
         </question>
         <answer1>
-
+            önmagad
         </answer1>
         <answer2>
-
+            tied
         </answer2>
         <answer3>
-
+            övéik
         </answer3>
         <answer4>
-
+            mienk
         </answer4>
         <result>
-
+            answer1
         </result>
     </questions>
 

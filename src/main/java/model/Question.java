@@ -93,7 +93,7 @@ public class Question {
      */
     public static int generateRandomNumber(){
         Random random = new Random();
-        int rand = random.nextInt(3);
+        int rand = random.nextInt(10);
         return rand;
 
 
