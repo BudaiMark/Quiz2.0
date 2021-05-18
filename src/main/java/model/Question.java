@@ -80,6 +80,7 @@ public class Question {
 
 
 
+
     /**
      * {@code getoneQuestion()}Kérdéslistából kisorsol egy random elemet.
      */

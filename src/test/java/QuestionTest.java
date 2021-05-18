@@ -1,4 +1,5 @@
 import model.Question;
+import model.Quiz;
 import model.XmlReader;
 
 
@@ -15,30 +16,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class QuestionTest {
-    private XmlReader reader = new XmlReader();
-    private ArrayList<Question>questionarray;
+
     private int random = Question.generateRandomNumber();
+    Quiz quiz = new Quiz();
 
-
-
-
-    @BeforeEach
-    void setup() throws Exception{
-
-        questionarray =reader.XmlRead();
-
-    }
 
     @Test
     void isChildrenOfArray(){
 
-        assertTrue(questionarray.get(0) instanceof Question);
+        assertTrue(quiz.getQuestionarray().get(0) instanceof Question);
 
     }
 
     @Test
     void questionArrayNotNull(){
-        assertNotNull(questionarray);
+        assertNotNull(quiz.getQuestionarray());
 
     }
 
@@ -54,12 +46,12 @@ public class QuestionTest {
 
     @Test
     public void isItChoosable() {
-        assertTrue(random< questionarray.size());
+        assertTrue(random< quiz.getQuestionarray().size());
     }
 
     @Test
     public void isItTrueSize() {
-        assertFalse(0>questionarray.size());
+        assertFalse(0>quiz.getQuestionarray().size());
     }
 
 

@@ -10,10 +10,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import lombok.extern.slf4j.Slf4j;
 import model.Question;
+import model.Quiz;
 import model.User;
-import model.XmlReader;
 import org.tinylog.Logger;
 import javafx.util.Duration;
 import javafx.animation.KeyFrame;
@@ -35,21 +34,26 @@ public class GameController{
     /**
      *{@code numberofscore, questionnumber}A kérdés, illetve a pont növelését elősegítő változók.
      */
-    private final int STARTINGTIME = 2;
+    private int STARTINGTIME;
     private int seconds = STARTINGTIME;
     private static final String STANDARD_BUTTON = "-fx-background-color: transparent; -fx-border-color: black;";
     private static final String GREEN_BUTTON = "-fx-background-color: lightgreen; -fx-border-color: black";
     private static final String RED_BUTTON = "-fx-background-color: red; -fx-border-color: black";
-    private final int QUESTION = 5;
-    private int numberofscore= 0;
-    private int questionnumber = 1;
+    private int QUESTION = 5;
+    private ArrayList<Question>questionarray;
+    private int numberofscore;
+    private int questionnumber;
+
+    private Question globalQuestion;
     /**
-     * {@code questionarray}Az xml fájlból beolvasott tartalom kérdéssé egyesített elemeinek listája
+     * {@code questionarray}Az xml fájlból beolvasott tartalom kérdéssé egyesített elemeinek listája.
      */
 
-    XmlReader reader = new XmlReader();
-    ArrayList<Question>questionarray =reader.XmlRead();
-    Question globalQuestion;
+    /**
+     * {@code} Quiz ppéldányosítása.
+     */
+    Quiz quiz= new Quiz();
+
 
 
     /**
@@ -105,7 +109,7 @@ public class GameController{
             if(globalQuestion.getResult().equals(answer1.getId())){
                 Logger.info("Első válasz helyes.");
                 answer1.setStyle(GREEN_BUTTON);
-                numberofscore++;
+                numberofscore = quiz.incScore(numberofscore);
                 score.setText(Integer.toString(numberofscore));
                 timer();
 
@@ -123,7 +127,7 @@ public class GameController{
 
                 Logger.info("Második válasz helyes.");
                 answer2.setStyle(GREEN_BUTTON);
-                numberofscore++;
+                numberofscore = quiz.incScore(numberofscore);
                 score.setText(Integer.toString(numberofscore));
                 timer();
 
@@ -143,7 +147,7 @@ public class GameController{
             if(globalQuestion.getResult().equals(answer3.getId())){
                 Logger.info("Harmadik válasz helyes.");
                 answer3.setStyle(GREEN_BUTTON);
-                numberofscore++;
+                numberofscore = quiz.incScore(numberofscore);
                 score.setText(Integer.toString(numberofscore));
                 timer();
 
@@ -159,7 +163,7 @@ public class GameController{
             if(globalQuestion.getResult().equals(answer4.getId())){
                 Logger.info("Negyedik válasz helyes.");
                 answer4.setStyle(GREEN_BUTTON);
-                numberofscore++;
+                numberofscore = quiz.incScore(numberofscore);
                 score.setText(Integer.toString(numberofscore));
                 timer();
 
@@ -240,7 +244,7 @@ public class GameController{
 
     public void timer(){
         Logger.info("Időzítő meghívása.");
-        questionnumber++;
+        questionnumber= quiz.incQuestionNumber(questionnumber);
         Timeline time = new Timeline();
         time.setCycleCount(Timeline.INDEFINITE);
         if(time!=null)
@@ -341,6 +345,11 @@ public class GameController{
     @FXML
     public void initialize() {
 
+        numberofscore = quiz.getNumberofscore();
+        questionnumber = quiz.getQuestionnumber();
+        questionarray = quiz.getQuestionarray();
+        STARTINGTIME = quiz.getSTARTINGTIME();
+        QUESTION = quiz.getQUESTION_LIMIT();
         initData();
         Logger.info("GameController betöltése sikeres.");
 
